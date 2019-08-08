@@ -20,11 +20,11 @@ nms_thres=0.4
 # load model and put into eval mode
 model = Darknet(config_path, img_size=img_size)
 model.load_weights(weights_path)
-model.cuda()
+#model.cuda()
 model.eval()
 
 classes = utils.load_classes(class_path)
-Tensor = torch.cuda.FloatTensor
+Tensor = torch.FloatTensor
 
 def detect_image(img):
     # scale and pad image
